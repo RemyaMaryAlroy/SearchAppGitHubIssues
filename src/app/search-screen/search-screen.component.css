@@ -1,0 +1,46 @@
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered{
+	background-color: gainsboro;
+	 position: absolute;
+    top: 100px;
+    left: 300px;
+    transform: translate(-50%, -50%);
+}
+
+.top-left
+{
+	background-color: gainsboro;
+	color: black;
+	position: absolute;
+    top: 8px;
+    left: 16px;
+	width: 100%;
+	height: 50px;
+}
+
+#i53Label
+{
+	font-size: 20px;
+}
+
+#i53
+{
+	font-size: 20px;
+}
+
+.button {
+    background-color:cadetblue; /* Blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
