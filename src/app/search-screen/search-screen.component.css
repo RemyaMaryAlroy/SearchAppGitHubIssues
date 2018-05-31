@@ -1,28 +1,36 @@
-
-.container {
-    position: relative;
-    text-align: center;
-    color: white;
+.pagination
+{
+ margin-left: 75%;
+ margin-top: 4%;
 }
 
 .centered{
 	background-color: gainsboro;
 	 position: absolute;
-    top: 100px;
-    left: 300px;
+    top: 20px;
+    left: 100px;
     transform: translate(-50%, -50%);
 }
-
+.pagination>li {
+    display: inline-block;
+}
 .top-left
 {
 	background-color: gainsboro;
 	color: black;
 	position: absolute;
-    top: 8px;
+    top: 0px;
     left: 16px;
 	width: 100%;
-	height: 50px;
+	height: 70px;
 }
+.next{
+    position: absolute;
+    top: 54px;
+    left: 84%;
+}
+
+
 
 #i53Label
 {
@@ -44,3 +52,16 @@
     display: inline-block;
     font-size: 16px;
 }
+@media only screen and (max-width: 600px) {
+   .top-left
+	{
+		height: 100px;
+	}
+	.row{
+		height: 90px;
+	}
+} 
+@media only screen and (min-width: 600px) {} 
+@media only screen and (min-width: 768px) {} 
+@media only screen and (min-width: 992px) {} 
+@media only screen and (min-width: 1200px) {}
