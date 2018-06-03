@@ -34,8 +34,8 @@
 					<td style="color:black;padding-left: 10px;font-weight: bold; border-right:8px solid #f5f5f5;padding-top: 0.5%;padding-bottom: 1%;margin-left:10px;font-size:20px;"  >
 						{{value.id}}
 					</td>
-					<td style="color:black;padding-left: 10px;font-weight: bold; border-right:8px solid #f5f5f5;padding-top: 0.5%;padding-bottom: 1%;margin-left:10px;font-size:20px;"  >
-						{{value.number}}
+					<td style="color:black;padding-left: 10px;font-weight: bold; border-right:8px solid #f5f5f5;padding-top: 0.5%;padding-bottom: 1%;margin-left:10px;font-size:20px;">
+						<a [routerLink]="['/issuedetails', value.number,owner,repo1]" >{{value.number}}</a>
 					</td>
 					<td style="color:black;padding-left: 10px;font-weight: bold; border-right:8px solid #f5f5f5;padding-top: 0.5%;padding-bottom: 1%;margin-left:10px;font-size:20px;"  >
 						{{value.title}}
@@ -49,10 +49,5 @@
 	</div>
 		   <br/>
 		   <br/>
-		  <ngx-spinner bdColor="rgba(51,51,51,0.8)"
-  size="medium"
-  color="#fff"
-  loadingText="Loading..."
-  type="ball-scale-multiple"></ngx-spinner> 
 <pagination-controls (pageChange)="p[i] = $event" [id]="id"></pagination-controls>
 </div>

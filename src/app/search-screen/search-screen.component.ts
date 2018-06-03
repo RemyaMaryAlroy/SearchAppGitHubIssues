@@ -39,7 +39,7 @@ data: any[] =[];
   }
   getSearchList() {
     this.spinner.show();
-     this.http.get('https://api.github.com/repos/'+ this.owner +'/'+ this.repo1 +'/issues').subscribe(
+     this.http.get('https://api.github.com/repos/'+ this.owner +'/'+ this.repo1 +'/issues?page=1&per_page=5').subscribe(
       data =>{
         this.data = data as any[] ;
 		 this.spinner.hide();

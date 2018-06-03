@@ -10,11 +10,13 @@ import { Injectable, Injector } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { IssuedetailsComponent } from './issuedetails/issuedetails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchScreenComponent
+    SearchScreenComponent,
+    IssuedetailsComponent
   ],
   imports: [
     AppRoutingModule,
