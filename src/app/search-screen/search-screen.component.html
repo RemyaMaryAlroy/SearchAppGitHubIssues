@@ -4,8 +4,9 @@
 	 margin-left: -1%;">
 		<div class="row" style="height: 74px; width:100%;padding-left:14%;">
 			<span><img src="assets/icons/git.png" style="width:70px;height:50px;padding-top:3px;"></span>
-			<label for="owner">OWNER :</label> <input type="text" id="i53" [(ngModel)]="owner" class="form-control" placeholder="Owner" > 
-			 <label for="repository">REPOSITORY :</label> <input type="text" id="i53" class="form-control" placeholder="Repo" [(ngModel)]="repo1">
+			<label for="owner">OWNER :</label> <input type="text" id="i53" [(ngModel)]="owner" class="form-control" (focusout)="getRepos()"  placeholder="Owner" > 
+			 <label for="repository">REPOSITORY :</label><input type="text" id="repos" list="repos-datalist" placeholder=" Repos" class="form-control" [(ngModel)]="repo">
+             <datalist id="repos-datalist"></datalist>
 			<button type="button" class=" button btn btn-primary" (click)="getSearchList();">
 			    		Submit 
 			 </button>

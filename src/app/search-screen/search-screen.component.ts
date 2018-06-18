@@ -29,31 +29,54 @@ data: any[] =[];
 	private spinner: NgxSpinnerService) { }
 
   username ='commercialhaskell';
-  repo ='stack';
+  repo :string;
   keyLength = 0;
   owner: string;
-  repo1: string;
+  repo1: any[] =[];
   p: number[] = [];
     ngOnInit() {
  
   }
+  
+  getRepos(){
+   console.log(this.owner);
+   var dataList = document.getElementById('repos-datalist');
+   while (dataList.hasChildNodes()) {   
+    dataList.removeChild(dataList.firstChild);
+    }
+   this.http.get('https://api.github.com/users/'+this.owner+'/repos?per_page=300').subscribe(
+     data => {
+      this.repo1 = data as any[] ;
+      this.assignRepos();
+      return this.repo1;
+     },
+     (err : HttpErrorResponse)=> { 
+         err.message;
+      }
+     ); 
+  }
+  
+  assignRepos(){
+  var dataList = document.getElementById('repos-datalist');
+  for (let i =0; i< this.repo1.length;i++){
+         var option = document.createElement('option');
+         option.value= this.repo1[i].name;
+         dataList.appendChild(option);
+     }
+  }
+  
   getSearchList() {
-    this.spinner.show();
-     this.http.get('https://api.github.com/repos/'+ this.owner +'/'+ this.repo1 +'/issues').subscribe(
+     this.http.get('https://api.github.com/repos/'+ this.owner +'/'+ this.repo+'/issues').subscribe(
       data =>{
         this.data = data as any[] ;
-		 this.spinner.hide();
+        this.owner = null;
+        this.repo =null;
         return this.data;
       },
-      (err : HttpErrorResponse)=> {
-	   this.spinner.hide();
+      (err : HttpErrorResponse)=> { 
         return err.message;
       }
      );
-	 this.spinner.hide();
-     return null;
   }
-    
-  
   }
 
